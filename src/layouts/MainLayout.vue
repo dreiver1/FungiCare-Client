@@ -1,21 +1,33 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header class="text-white" style="background-color: #087E05;">
+      <q-bar dense class="text-white" style="background-color: #087E05;">
+        <div>mobi-net</div>
+        <q-icon name="email" />
+        <q-space />
+        <q-icon name="bluetooth" />
+        <q-icon name="signal_wifi_4_bar" />
+        <q-icon name="signal_cellular_4_bar" />
+        <div class="gt-xs">100%</div>
+        <q-icon name="battery_full" />
+        <div>10:00AM</div>
+      </q-bar>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
 
-        <q-toolbar-title>
-          Quasar App
+        <q-toolbar-title class="q-ma-lg">
+          <q-icon name="arrow_back_ios" size="xl"/>
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div class="q-ma-md">
+          <q-btn
+            flat
+            size="xl"
+            outline
+            icon="settings"
+            aria-label="Menu"
+            @click="toggleLeftDrawer"
+          />
+        </div>
       </q-toolbar>
     </q-header>
 

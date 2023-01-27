@@ -1,23 +1,22 @@
 <template>
-  <q-page class="column justify-between" style="background-color: #087E05;">
-    <div class="row justify-center self-center" >
+  <q-page class="column justify-end bg-white">
+    <div class="column self-center q-mb-xl" >
       <q-img
-          width="184px"
-          height="139px"
-          src="../assets/camera.png"
+          width="198px"
+          height="198px"
+          src="../assets/fungo.png"
         />
     </div>
     <div class="flex flex-end">
-      <q-item class="col-12 bg-white column flex-center items-center" style="border-radius: 30px 30px 0px 0px; min-height: 450px;">
-        <q-img
-          width="184px"
-          height="139px"
-          src="../assets/camera.png"
-        />
-        <div class="text-center text-subtitle2 q-ma-md">Tire uma foto para podermos identificar que tipo de praga que o aflige!</div>
+      <q-item class="col-12 bg-primary column flex-center items-center" style="border-radius: 30px 30px 0px 0px; min-height: 400px;">
+        <div class="text-center text-h4 q-ma-md text-white">
+          Cadastre-se agora!
+        </div>
+        <div class="text-center text-subtitle2 q-ma-md text-white">
+          Venha identificar e entender os diferentes tipos de fungos conosco!
+        </div>
         <div class="q-my-md">
-          <q-btn color="primary" rounded text-color="white" label="Tirar foto" class="q-pa-md q-mx-sm" size="lg"/>
-          <q-btn color="secondary" rounded text-color="white" label="selecionar" class="q-pa-md q-mx-sm" size="lg"/>
+          <q-btn color="white" rounded text-color="accent" label="Avançar >" class="q-pa-md q-mx-sm" size="lg" :to="{name: 'home'}"/>
         </div>
       </q-item>
     </div>
@@ -28,6 +27,6 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'IndexPage'
+  name: 'cadastroPage'
 })
 </script>

@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="text-white" style="background-color: primary;">
+    <q-header class="text-white" style="background-color: none;">
       <q-bar dense class="text-white" style="background-color: primary;">
         <div>10:00</div>
         <q-icon name="email" />
@@ -17,37 +17,10 @@
         </q-toolbar-title>
 
         <div class="q-ma-md">
-          <q-btn
-            flat
-            size="xl"
-            outline
-            icon="settings"
-            aria-label="Menu"
-            @click="toggleLeftDrawer"
-          />
+          <q-btn icon="settings"  unelevated size="lg" text-color="white" :to="{ name: 'configuracoes' }"/>
         </div>
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -56,16 +29,16 @@
     <q-footer class="bg-white text-black q-py-md">
         <div class="row justify-evenly">
           <div>
-            <q-icon name="account_box"  size="xl"/>
+            <q-btn icon="account_box"  unelevated size="lg" text-color="black" :to="{ name: 'home' }"/>
           </div>
           <div>
-            <q-icon name="folder"  size="xl"/>
+            <q-btn icon="folder"  unelevated size="lg" text-color="black" :to="{ name: 'home' }"/>
           </div>
           <div>
-            <q-icon name="search"  size="xl"/>
+            <q-btn icon="search"  unelevated size="lg" text-color="black" :to="{ name: 'home' }"/>
           </div>
           <div>
-            <q-icon name="perm_identity"  size="xl"/>
+            <q-btn icon="perm_identity"  unelevated size="lg" text-color="black" :to="{ name: 'perfil' }"/>
           </div>
         </div>
     </q-footer>
@@ -73,70 +46,21 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
 
-  components: {
-    EssentialLink
+  components: {},
+
+  props: {
+    page: {
+      type: String
+    }
   },
 
   setup () {
-    const leftDrawerOpen = ref(false)
-
     return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
     }
   }
 })

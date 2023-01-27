@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="text-white" style="background-color: primary;">
-      <q-bar dense class="text-white" style="background-color: primary;">
+    <q-header class="text-black bg-white">
+      <q-bar dense class="text-black bg-white" >
         <div>10:00</div>
         <q-icon name="email" />
         <q-space />

@@ -2,17 +2,21 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/home.vue') },
-      { path: 'perfil', component: () => import('pages/perfil.vue') }
-    ]
-  },
-  {
-    path: '/',
     component: () => import('layouts/cadastroLayout.vue'),
     children: [
-      { path: 'cadastro', component: () => import('pages/cadastro.vue') }
+      { path: '', name: 'loginDefault', component: () => import('pages/login.vue') },
+      { path: 'login', name: 'login', component: () => import('pages/login.vue') },
+      { path: 'cadastro', name: 'cadastro', component: () => import('pages/cadastro.vue') }
+    ]
+  },
+
+  {
+    path: '/',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', name: 'home', component: () => import('pages/home.vue') },
+      { path: 'perfil', name: 'perfil', component: () => import('pages/perfil.vue') },
+      { path: 'configuracoes', name: 'configuracoes', component: () => import('pages/configuracoes.vue') }
     ]
   },
 

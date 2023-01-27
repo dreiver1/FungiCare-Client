@@ -16,7 +16,7 @@
           Venha identificar e entender os diferentes tipos de fungos conosco!
         </div>
         <div class="q-my-md">
-          <q-btn color="white" rounded text-color="accent" label="Avançar >" class="q-pa-md q-mx-sm" size="lg" :to="{name: 'home'}"/>
+          <q-btn color="white" rounded text-color="accent" label="Avançar >" class="q-pa-md q-mx-sm" size="lg" :to="{name: 'cadastroForm'}"/>
         </div>
       </q-item>
     </div>

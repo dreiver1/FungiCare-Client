@@ -6,7 +6,8 @@ const routes = [
     children: [
       { path: '', name: 'loginDefault', component: () => import('pages/login.vue') },
       { path: 'login', name: 'login', component: () => import('pages/login.vue') },
-      { path: 'cadastro', name: 'cadastro', component: () => import('pages/cadastro.vue') }
+      { path: 'cadastro', name: 'cadastro', component: () => import('pages/cadastro.vue') },
+      { path: 'cadastroForm', name: 'cadastroForm', component: () => import('pages/cadastroForm.vue') }
     ]
   },
 

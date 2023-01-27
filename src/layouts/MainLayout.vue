@@ -52,6 +52,23 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer class="bg-white text-black q-py-md">
+        <div class="row justify-evenly">
+          <div>
+            <q-icon name="account_box"  size="xl"/>
+          </div>
+          <div>
+            <q-icon name="folder"  size="xl"/>
+          </div>
+          <div>
+            <q-icon name="search"  size="xl"/>
+          </div>
+          <div>
+            <q-icon name="perm_identity"  size="xl"/>
+          </div>
+        </div>
+    </q-footer>
   </q-layout>
 </template>
 

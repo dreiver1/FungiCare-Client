@@ -1,11 +1,33 @@
-"# FungiCare-Client" 
+# FungiCare (fungicare)
 
-requisitos:
+A ia
 
-1 - node 16.16.0 ou superior
-https://nodejs.org/en/
+## Install the dependencies
+```bash
+yarn
+# or
+npm install
+```
 
-como iniciar o projeto: 
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
 
-1 - npm i - para instalar as dependencias
-2 - npx quasar dev para executar o projeto.
+
+### Lint the files
+```bash
+yarn lint
+# or
+npm run lint
+```
+
+
+
+### Build the app for production
+```bash
+quasar build
+```
+
+### Customize the configuration
+See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).

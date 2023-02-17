@@ -46,8 +46,6 @@ import 'app/src-pwa/register-service-worker'
 
 
 
-console.info('[Quasar] Running PWA.')
-
 
 
 // Needed only for iOS PWAs

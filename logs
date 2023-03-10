@@ -1,0 +1,144 @@
+2:59:14 PM: Build ready to start
+2:59:15 PM: build-image version: ef078bfa7a50bfefe79b8261fb69e3476ffed2e1 (focal)
+2:59:15 PM: buildbot version: ef078bfa7a50bfefe79b8261fb69e3476ffed2e1
+2:59:15 PM: Fetching cached dependencies
+2:59:15 PM: Starting to download cache of 112.3MB
+2:59:17 PM: Finished downloading cache in 1.215s
+2:59:17 PM: Starting to extract cache
+2:59:17 PM: Finished extracting cache in 755ms
+2:59:17 PM: Finished fetching cache in 2.011s
+2:59:17 PM: Starting to prepare the repo for build
+2:59:18 PM: Preparing Git Reference refs/heads/main
+2:59:18 PM: Parsing package.json dependencies
+2:59:19 PM: Starting build script
+2:59:19 PM: Installing dependencies
+2:59:19 PM: Python version set to 2.7
+2:59:20 PM: Started restoring cached Node.js version
+2:59:20 PM: Finished restoring cached Node.js version
+2:59:20 PM: v16.19.0 is already installed.
+2:59:21 PM: Now using node v16.19.0 (npm v8.19.3)
+2:59:21 PM: Enabling Node.js Corepack
+2:59:21 PM: Started restoring cached build plugins
+2:59:21 PM: Finished restoring cached build plugins
+2:59:21 PM: Attempting Ruby version 2.7.2, read from environment
+2:59:21 PM: Using Ruby version 2.7.2
+2:59:21 PM: Using PHP version 8.0
+2:59:21 PM: Started restoring cached corepack dependencies
+2:59:21 PM: Finished restoring cached corepack dependencies
+2:59:22 PM: No npm workspaces detected
+2:59:22 PM: Started restoring cached node modules
+2:59:22 PM: Finished restoring cached node modules
+2:59:22 PM: Installing npm packages using npm version 8.19.3
+2:59:24 PM: added 1 package, removed 1 package, changed 35 packages, and audited 674 packages in 2s
+2:59:24 PM: 123 packages are looking for funding
+2:59:24 PM:   run `npm fund` for details
+2:59:24 PM: found 0 vulnerabilities
+2:59:24 PM: npm packages installed
+2:59:24 PM: Started restoring cached go cache
+2:59:24 PM: Finished restoring cached go cache
+2:59:24 PM: go version go1.19.5 linux/amd64
+2:59:25 PM: Detected 0 framework(s)
+2:59:25 PM: Installing missing commands
+2:59:25 PM: Verify run directory
+2:59:25 PM: Section completed: initializing
+2:59:26 PM: ​
+2:59:26 PM:   Netlify Build                                                 
+2:59:26 PM: ────────────────────────────────────────────────────────────────
+2:59:26 PM: ​
+2:59:26 PM: ❯ Version
+2:59:26 PM:   @netlify/build 29.5.7
+2:59:26 PM: ​
+2:59:26 PM: ❯ Flags
+2:59:26 PM:   baseRelDir: true
+2:59:26 PM:   buildId: 63ebcbf22c1a050008863c29
+2:59:26 PM:   deployId: 63ebcbf22c1a050008863c2b
+2:59:26 PM: ​
+2:59:26 PM: ❯ Current directory
+2:59:26 PM:   /opt/build/repo
+2:59:26 PM: ​
+2:59:26 PM: ❯ Config file
+2:59:26 PM:   No config file was defined: using default values.
+2:59:26 PM: ​
+2:59:26 PM: ❯ Context
+2:59:26 PM:   production
+2:59:26 PM: ​
+2:59:26 PM:   1. Build command from Netlify app                             
+2:59:26 PM: ────────────────────────────────────────────────────────────────
+2:59:26 PM: ​
+2:59:26 PM: $ quasar build -m pwa
+2:59:26 PM:  .d88888b.
+2:59:26 PM: d88P" "Y88b
+2:59:26 PM: 888     888
+2:59:26 PM: 888     888 888  888  8888b.  .d8888b   8888b.  888d888
+2:59:26 PM: 888     888 888  888     "88b 88K          "88b 888P"888 Y8b 888 888  888 .d888888 "Y8888b. .d888888 888Y88b.Y8b88P Y88b 888 888  888      X88 888  888 888
+2:59:26 PM:  "Y888888"   "Y88888 "Y888888  88888P' "Y888888 888       Y8b
+2:59:26 PM:  Build mode............. pwa
+2:59:26 PM:  Pkg quasar............. v2.11.6
+2:59:26 PM:  Pkg @quasar/app-vite... v1.2.0
+2:59:26 PM:  Pkg vite............... v2.9.15
+2:59:26 PM:  Debugging.............. no
+2:59:27 PM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+2:59:26 PM:  Publishing............. no
+2:59:27 PM:  App •  WAIT  • Compiling of PWA UI with Vite in progress...
+2:59:27 PM: [quasar:eslint] No ESLint configuration found in /opt/build/repo/.quasar.
+2:59:27 PM: file: /opt/build/repo/.quasar/client-entry.js
+2:59:27 PM: /opt/build/repo/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3977
+2:59:27 PM:             throw new ConfigurationNotFoundError(directoryPath);
+2:59:27 PM:                   ^
+2:59:27 PM: ConfigurationNotFoundError: No ESLint configuration found in /opt/build/repo/.quasar.
+2:59:27 PM:     at CascadingConfigArrayFactory._finalizeConfigArray (/opt/build/repo/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3977:19)
+2:59:27 PM:     at CascadingConfigArrayFactory.getConfigArrayForFile (/opt/build/repo/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3768:21)
+2:59:27 PM:     at CLIEngine.isPathIgnored (/opt/build/repo/node_modules/eslint/lib/cli-engine/cli-engine.js:989:18)
+2:59:27 PM:     at ESLint.isPathIgnored (/opt/build/repo/node_modules/eslint/lib/eslint/eslint.js:681:26)
+2:59:27 PM:     at Object.transform (/opt/build/repo/node_modules/@quasar/app-vite/lib/plugins/vite.eslint.js:23:48)
+2:59:27 PM:     at /opt/build/repo/node_modules/rollup/dist/shared/rollup.js:22826:37 {
+2:59:27 PM:   messageTemplate: 'no-config-found',
+2:59:27 PM:   messageData: { directoryPath: '/opt/build/repo/.quasar' },
+2:59:27 PM:   code: 'PLUGIN_ERROR',
+2:59:27 PM:   plugin: 'quasar:eslint',
+2:59:27 PM:   hook: 'transform',
+2:59:27 PM:   id: '/opt/build/repo/.quasar/client-entry.js',
+2:59:27 PM:   watchFiles: [
+2:59:27 PM:     '/opt/build/repo/index.html',
+2:59:27 PM:     '/opt/build/repo/.quasar/client-entry.js'
+2:59:27 PM:   ]
+2:59:27 PM: }
+2:59:27 PM: ​
+2:59:27 PM:   "build.command" failed                                        
+2:59:27 PM: ────────────────────────────────────────────────────────────────
+2:59:27 PM: ​
+2:59:27 PM:   Error message
+2:59:27 PM:   Command failed with exit code 1: quasar build -m pwa (https://ntl.fyi/exit-code-1)
+2:59:27 PM: ​
+2:59:27 PM:   Error location
+2:59:27 PM:   In Build command from Netlify app:
+2:59:27 PM:   quasar build -m pwa
+2:59:27 PM: ​
+2:59:27 PM:   Resolved config
+2:59:27 PM:   build:
+2:59:27 PM:     command: quasar build -m pwa
+2:59:27 PM:     commandOrigin: ui
+2:59:27 PM:     publish: /opt/build/repo/dist/pwa
+2:59:27 PM:     publishOrigin: ui
+2:59:27 PM: Caching artifacts
+2:59:27 PM: Started saving node modules
+2:59:27 PM: Finished saving node modules
+2:59:27 PM: Started saving build plugins
+2:59:27 PM: Finished saving build plugins
+2:59:27 PM: Started saving corepack cache
+2:59:27 PM: Finished saving corepack cache
+2:59:27 PM: Started saving pip cache
+2:59:27 PM: Finished saving pip cache
+2:59:27 PM: Started saving emacs cask dependencies
+2:59:27 PM: Finished saving emacs cask dependencies
+2:59:27 PM: Started saving maven dependencies
+2:59:27 PM: Finished saving maven dependencies
+2:59:27 PM: Started saving boot dependencies
+2:59:27 PM: Finished saving boot dependencies
+2:59:27 PM: Started saving rust rustup cache
+2:59:27 PM: Finished saving rust rustup cache
+2:59:27 PM: Started saving go dependencies
+2:59:27 PM: Finished saving go dependencies
+2:59:27 PM: Build failed due to a user error: Build script returned non-zero exit code: 2
+2:59:27 PM: Failing build: Failed to build site
+2:59:28 PM: Finished processing build request in 12.261s

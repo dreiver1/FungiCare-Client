@@ -13,10 +13,10 @@
           src="../assets/camera.png"
         />
         <div class="text-center text-subtitle2 q-ma-md">Tire uma foto para podermos identificar que tipo de praga que o aflige!</div>
-        <div class="q-my-md">
-          <q-btn color="primary" rounded text-color="white" label="Tirar foto" class="q-pa-md q-mx-sm" size="lg"/>
-          <q-btn color="secondary" rounded text-color="white" label="selecionar" class="q-pa-md q-mx-sm" size="lg"/>
-        </div>
+        <q-item class="q-my-md column justify-between col-4">
+          <q-btn color="primary" rounded outlined text-color="white" label="Tirar foto" class="col-5"/>
+          <q-file bg-color="secondary" rounded outlined text-color="white" label="selecionar" style="text-align: center; justify-content: center;" class="col-12 q-my-sm"/>
+        </q-item> 
       </q-item>
     </div>
   </q-page>

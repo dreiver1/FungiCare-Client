@@ -1,0 +1,97 @@
+<template>
+    <q-page class="flex justify-center col-12" style="background-color: #fff;">
+            
+        <video autoplay ref="videoplay" style="position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+            object-fit: cover;">
+        </video>
+        <q-item class="self-end" >
+            <q-item class="column justify-between col-12">
+              <q-btn
+                v-if="!cameraStart"
+                label="Acessar Camera"
+                color="primary"
+                icon="camera"
+                :disable="!enableCamera"
+                @click="useCamera"
+              />
+              <q-btn
+                v-else
+                label="Tirar Foto"
+                color="primary"
+                icon="camera"
+                @click="takePhoto"
+              />
+            </q-item>
+        </q-item>
+        <div class="canvas" style="display: none;">
+            <canvas ref="imgTakePhoto">
+
+            </canvas>
+        </div>
+    </q-page>
+</template>
+
+<script>
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+name: 'IndexPage',
+data () {
+    return {
+    enableCamera: false,
+    cameraStart: false,
+    imageCapture: null,
+    track: null
+    }
+},
+mounted () {
+    if (navigator.mediaDevices.getUserMedia) {
+    this.enableCamera = true
+    }
+},
+methods: {
+    useCamera () {
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(mediaStream => {
+        this.cameraStart = true
+        this.$refs.videoplay.srcObject = mediaStream
+        this.track = mediaStream.getVideoTracks()[0]
+        this.imageCapture = new ImageCapture(this.track)
+        })
+    },
+    takePhoto () {
+    this.imageCapture.takePhoto()
+        .then(blob => {
+        createImageBitmap(blob)
+        const reader = new FileReader()
+        reader.readAsDataURL(blob)
+        reader.onloadend = () => {
+            const video = document.querySelector('video');
+            const canvas = document.querySelector('canvas');
+
+            // ajuste as dimensões do canvas para as do vídeo
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            // desenhe o quadro atual do vídeo no canvas
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // capture a imagem do canvas como uma string codificada em base64
+            const image = canvas.toDataURL('image/png');
+
+            // salve a string no Local Storage
+            localStorage.setItem('imageData', image);
+
+            this.$router.push('/resultado')
+          }
+        })
+        .catch(error => console.log(error))
+    }
+}
+})
+</script>

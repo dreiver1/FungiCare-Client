@@ -16,7 +16,7 @@
 
           <q-item clickable v-ripple>
             <q-item-section center avatar>
-              <q-icon name="settings"></q-icon>
+              <q-icon name="settings" :to="{ name: 'home' }"></q-icon>
             </q-item-section>
             <q-item-section >
               <q-item-label>Configuração</q-item-label>

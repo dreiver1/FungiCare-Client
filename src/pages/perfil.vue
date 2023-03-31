@@ -14,7 +14,7 @@
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Dashboard</q-item-label>
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple :to="{name: 'minhaConta'}">
             <q-item-section center avatar>
               <q-icon name="settings" :to="{ name: 'home' }"></q-icon>
             </q-item-section>
@@ -78,7 +78,6 @@
 import { defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
 const route = useRouter()
-
 export default defineComponent({
   name: 'IndexPage',
   data () {

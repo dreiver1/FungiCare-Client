@@ -14,12 +14,12 @@
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Dashboard</q-item-label>
 
-          <q-item clickable v-ripple :to="{name: 'minhaConta'}">
+          <q-item clickable v-ripple :to="{ name: 'conta' }">
             <q-item-section center avatar>
-              <q-icon name="settings" :to="{ name: 'home' }"></q-icon>
+              <q-icon name="settings"></q-icon>
             </q-item-section>
             <q-item-section >
-              <q-item-label>Configuração</q-item-label>
+              <q-item-label >Configuração</q-item-label>
             </q-item-section>
             <q-item-section side>
               <q-icon name="arrow_forward_ios"></q-icon>

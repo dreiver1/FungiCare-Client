@@ -19,7 +19,7 @@ const routes = [
       { path: '', name: 'home', component: () => import('pages/home.vue') },
       { path: 'perfil', name: 'perfil', component: () => import('pages/perfil.vue') },
       { path: 'configuracoes', name: 'configuracoes', component: () => import('pages/configuracoes.vue') },
-      { path: 'resultado', name: 'resultado', component: () => import('pages/resultadoAnalise.vue') }
+      { path: 'resultado', name: 'resultado', component: () => import('pages/resultadoAnalise.vue') },
     ]
   },
 

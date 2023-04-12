@@ -1,9 +1,8 @@
 <template>
-  <q-page class="column justify-between" style="background-color: #087E05;">
-    <canvas style="display: none;" id="foto"></canvas>
+  <q-page class="column justify-between" >
     <div class="flex flex-center" >
       <q-item class="col-12 self-center" >
-        <div class="text-h4 q-mx-lg" style="color: white;">Olá, Beltrano!</div>
+        <div class="text-h4 q-mx-lg">Olá, Beltrano!</div>
       </q-item>
     </div>
     <div class="col-12 flex flex-center">
@@ -18,6 +17,7 @@
           <q-btn color="primary" rounded outlined :to="{ name: 'camera' }" size="lg" label="Camera"/>
           <q-file bg-color="secondary" rounded outlined text-color="white" label="selecionar" style="text-align: center; justify-content: center;" class="col-12 q-my-sm" @click="takePhoto" ref="imageCapture"/>
         </q-item>
+        <darkMode/>
       </q-item>
     </div>
   </q-page>
@@ -28,34 +28,13 @@ import { defineComponent } from 'vue'
 import darkMode from 'src/components/darkMode.vue'
 
 export default defineComponent({
-  name: 'IndexPage',
+  name: 'homePage',
   data () {
     return {
-      enableCamera: false,
-      cameraStart: false,
-      imageCapture: null,
-      track: null
-      
     }
   },
-  mounted () {
-    if (navigator.mediaDevices.getUserMedia) {
-      this.enableCamera = true
-    }
-  },
-  methods: {
-    useCamera () {
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then(mediaStream => {
-          this.cameraStart = true
-          this.$refs.videoplay.srcObject = mediaStream
-          this.track = mediaStream.getVideoTracks()[0]
-          this.imageCapture = new ImageCapture(this.track)
-        })
-    },
-    takePhoto () {
-      console.log("take a photo")
-    }
+  components: {
+    darkMode
   }
 })
 </script>

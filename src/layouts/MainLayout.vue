@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="text-white" style="background-color: none;">
+    <q-header class="text-white" >
       <q-toolbar>
         <q-toolbar-title class="q-ma-lg">
           <q-icon name="arrow_back_ios" size="xl"/>

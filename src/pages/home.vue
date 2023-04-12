@@ -3,7 +3,7 @@
     <canvas style="display: none;" id="foto"></canvas>
     <div class="flex flex-center" >
       <q-item class="col-12 self-center" >
-        <div class="text-h4 q-mx-lg" style="color: white;">Olá, Cicrano!</div>
+        <div class="text-h4 q-mx-lg" style="color: white;">Olá, Beltrano!</div>
       </q-item>
     </div>
     <div class="col-12 flex flex-center">
@@ -17,7 +17,7 @@
         <q-item class="q-my-md column justify-between col-4">
           <q-btn color="primary" rounded outlined :to="{ name: 'camera' }" size="lg" label="Camera"/>
           <q-file bg-color="secondary" rounded outlined text-color="white" label="selecionar" style="text-align: center; justify-content: center;" class="col-12 q-my-sm" @click="takePhoto" ref="imageCapture"/>
-        </q-item> 
+        </q-item>
       </q-item>
     </div>
   </q-page>
@@ -25,6 +25,7 @@
 
 <script>
 import { defineComponent } from 'vue'
+import darkMode from 'src/components/darkMode.vue'
 
 export default defineComponent({
   name: 'IndexPage',

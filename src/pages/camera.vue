@@ -1,6 +1,7 @@
 <template>
     <q-page class="flex justify-center col-12" style="background-color: #fff;">
-            
+        console.log('');
+        
         <video autoplay ref="videoplay" style="position: fixed;
 			top: 0;
 			left: 0;

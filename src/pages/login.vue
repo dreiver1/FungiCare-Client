@@ -8,10 +8,10 @@
         />
     </div>
     <div class="flex flex-center text-center">
-      <q-item class="col-12 bg-primary column flex-center items-center" style="border-radius: 30px 30px 0px 0px; min-height: 400px;">
-        <div class="text-center text-h4 q-ma-md text-white row">
-          <q-input v-model="email" label="Email" filled class="q-my-md col-12" color="black" bg-color="white"/>
-          <q-input v-model="password" label="Senha" filled :type="isPwd ? 'password' : 'text'" hint="Senha" class="col-12" color="black" bg-color="white">
+      <q-item class="col-12 column flex-center items-center lista" style="border-radius: 30px 30px 0px 0px; min-height: 400px;">
+        <div class="text-center text-h4 q-ma-md row">
+          <q-input v-model="email" label="Email" filled class="q-my-md col-12" label-color="black" color="black" bg-color="white"/>
+          <q-input v-model="password" label="Senha" label-color="black" filled :type="isPwd ? 'password' : 'text'" class="col-12" color="black" bg-color="white">
             <template v-slot:append>
               <q-icon
                 :name="isPwd ? 'visibility_off' : 'visibility'"
@@ -31,11 +31,17 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
+import { useQuasar } from 'quasar'
 
 export default defineComponent({
   name: 'loginPage',
   setup () {
+    const $q = useQuasar();
+    onMounted(()=>{
+      let value = $q.localStorage.getItem('darkMode');
+      $q.dark.set(value);
+    })
     return {
       password: ref(''),
       isPwd: ref(true),
@@ -44,3 +50,11 @@ export default defineComponent({
   }
 })
 </script>
+<style>
+.body--dark .lista{
+  background-color: black;
+}
+.body--light .lista{
+  background-color: green;
+}
+</style>

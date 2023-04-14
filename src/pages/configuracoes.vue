@@ -1,10 +1,10 @@
 <template>
-  <q-page class="column justify-start" style="background-color: #087E05;">
-    <!-- <div class="row flex-center" style="margin-top: ">
+  <q-page class="column justify-start">
+    <div class="row flex-center" style="margin-top: ">
       <div class="text-h6">Configuração</div>
-    </div> -->
+    </div>
     <div class="row flex-center q-my-lg">
-      <q-item class="col-10 bg-white column justify-center items-center" style="min-height: 25%; max-height: 35%">
+      <q-item class="col-10 bg-white column justify-center items-center lista" style="min-height: 25%; max-height: 35%">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Linguagem</q-item-label>
 
@@ -29,7 +29,7 @@
       </q-item>
     </div>
     <div class="row flex-center">
-      <q-item class="col-10 bg-white column justify-center items-center" style="min-height: 25%; max-height: 35%;">
+      <q-item class="col-10 bg-white column justify-center items-center lista" style="min-height: 25%; max-height: 35%;">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Configurações adicionais</q-item-label>
 
@@ -99,3 +99,21 @@ export default defineComponent({
   }
 })
 </script>
+<style>
+.body--light {
+  background: green;
+}
+
+.body--dark {
+  background: black;
+
+}
+.body--light .lista {
+  background: white;
+}
+
+.body--dark .lista {
+  background: white;
+  color: black;
+}
+</style>

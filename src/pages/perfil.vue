@@ -1,5 +1,5 @@
 <template>
-  <q-page class="column justify-evenly" style="background-color: #087E05;">
+  <q-page class="column justify-evenly">
     <div class="flex flex-center">
      <div class="row col-12">
        <q-icon name="person" color="white" size="xl"/>
@@ -10,7 +10,7 @@
      </div>
     </div>
     <div class="row flex-center">
-      <q-item class="col-10 bg-white column justify-center items-center" style="min-height: 25%; max-height: 35%">
+      <q-item class="col-10 lista column justify-center items-center" style="min-height: 25%; max-height: 35%">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Dashboard</q-item-label>
 
@@ -53,7 +53,7 @@
       </q-item>
     </div>
     <div class="row flex-center q-mb-xl">
-      <q-item class="col-10 bg-white column justify-center items-center" style="min-height: 25%; max-height: 35%;">
+      <q-item class="col-10 lista column justify-center items-center" style="min-height: 25%; max-height: 35%;">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Dashboard</q-item-label>
 
@@ -90,3 +90,27 @@ export default defineComponent({
   }
 })
 </script>
+<style>
+.body--light {
+  background: green;
+}
+
+.body--dark {
+  background: black;
+
+}
+
+.body--light .lista {
+  background: white;
+}
+
+.body--dark .lista {
+  background: white;
+  color: black;
+}
+
+.body--dark .lista * {
+  color: black;
+}
+
+</style>

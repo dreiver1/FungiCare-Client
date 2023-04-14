@@ -1,26 +1,43 @@
 <template>
-  <q-toggle
-        v-model="darkMode"
-        color="pink"
-        icon="mail"
-        label="Same Icon for each state"
-      />
+  <q-btn color="" text-color="black" flat dense size="xl" @click="onClick" v-bind:icon="inputId" />
 </template>
 <script>
-import { defineComponent, ref, watch } from'vue'
+import { defineComponent, ref, onMounted } from'vue'
 import { useQuasar } from 'quasar'
 
 export default defineComponent({
   name: 'darkMode',
   setup () {
     const $q = useQuasar();
-    const darkMode = ref(false);
-    watch(darkMode, (darkMode)=>{
-      console.log("darkmode", darkMode);
-      $q.dark.set(darkMode);
-    });
+    var darkMode = ref(false);
+    let inputId = ref('light_mode');
+
+    const onClick = ()=>{
+      darkMode= ref(!darkMode.value);
+      $q.dark.set(darkMode.value);
+      if(darkMode.value == true){
+        inputId.value = 'dark_mode'
+      }else{
+        inputId.value = 'light_mode'
+      }
+      $q.localStorage.set('darkMode', darkMode.value)
+    }
+
+    onMounted(()=>{
+      let value = $q.localStorage.getItem('darkMode');
+      darkMode.value = value
+      $q.dark.set(darkMode.value);
+      if(darkMode.value == true){
+        inputId.value = 'dark_mode'
+      }else{
+        inputId.value = 'light_mode'
+      }
+    })
+
     return {
-      darkMode
+      darkMode,
+      onClick,
+      inputId
     }
   }
 })

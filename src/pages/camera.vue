@@ -1,7 +1,5 @@
 <template>
-    <q-page class="flex justify-center col-12" style="background-color: #fff;">
-        console.log('');
-        
+    <q-page class="flex justify-center col-12">       
         <video autoplay ref="videoplay" style="position: fixed;
 			top: 0;
 			left: 0;
@@ -73,21 +71,12 @@ methods: {
         reader.onloadend = () => {
             const video = document.querySelector('video');
             const canvas = document.querySelector('canvas');
-
-            // ajuste as dimensões do canvas para as do vídeo
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
-
-            // desenhe o quadro atual do vídeo no canvas
             const context = canvas.getContext('2d');
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            // capture a imagem do canvas como uma string codificada em base64
             const image = canvas.toDataURL('image/png');
-
-            // salve a string no Local Storage
             localStorage.setItem('imageData', image);
-
             this.$router.push('/resultado')
           }
         })
@@ -96,3 +85,15 @@ methods: {
 }
 })
 </script>
+<style>
+.body--light {
+  background: white;
+}
+
+.body--dark {
+  background: black;
+
+}
+
+
+</style>

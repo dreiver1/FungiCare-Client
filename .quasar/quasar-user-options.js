@@ -13,7 +13,9 @@
 
 
 
+import {LocalStorage} from 'quasar'
 
 
-export default { config: {"brand":{"primary":"#087e05","secondary":"#2c35fe","accent":"#3DB2FF","dark":"#1d1d1d","dark-page":"#121212","positive":"#21BA45","negative":"#C10015","info":"#31CCEC","warning":"#F2C037"}} }
+
+export default { config: {"brand":{"primary":"#087e05","secondary":"#2c35fe","accent":"#3DB2FF","dark":"#1d1d1d","dark-page":"#121212","positive":"#21BA45","negative":"#C10015","info":"#31CCEC","warning":"#F2C037"}},plugins: {LocalStorage} }
 

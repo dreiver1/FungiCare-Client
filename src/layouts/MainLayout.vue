@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="text-white" >
+    <q-header class="text-white bg-transparent" >
       <q-toolbar>
         <q-toolbar-title class="q-ma-lg">
           <q-icon name="arrow_back_ios" size="xl"/>
@@ -55,3 +55,13 @@ export default defineComponent({
   }
 })
 </script>
+<style>
+.body--light {
+  background: green;
+}
+
+.body--dark {
+  background: black;
+
+}
+</style>

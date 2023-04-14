@@ -10,8 +10,8 @@
      </div>
     </div>
     <div class="row flex-center">
-      <q-item class="col-10 column justify-center items-center" style="min-height: 25%; max-height: 35%">
-        <q-list separator class="col-8 " style="width: 100%">
+      <q-item class="col-10 lista column justify-center items-center lista_perfil" style="min-height: 25%; max-height: 35%">
+        <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Dashboard</q-item-label>
 
           <q-item clickable v-ripple :to="{ name: 'conta' }">
@@ -53,7 +53,7 @@
       </q-item>
     </div>
     <div class="row flex-center q-mb-xl">
-      <q-item class="col-10 column justify-center items-center" style="min-height: 25%; max-height: 35%;">
+      <q-item class="col-10 lista column justify-center items-center lista_perfil" style="min-height: 25%; max-height: 35%;">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Dashboard</q-item-label>
 
@@ -100,16 +100,16 @@ export default defineComponent({
 
 }
 
-.body--light .lista {
+.body--light .lista_perfil {
   background: white;
 }
 
-.body--dark .lista {
-  background: white;
-  color: black;
+.body--dark .lista_perfil {
+  background: black;
+  color: white;
 }
 
-.body--dark .lista {
+.body--dark .lista_perfil {
   color: black;
 }
 

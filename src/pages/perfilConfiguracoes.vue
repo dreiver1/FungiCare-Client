@@ -7,7 +7,7 @@
     </div>
 
     <div class="row flex-center">
-      <q-item class="col-10 bg-white column justify-center items-center lista" style="min-height: 25%; max-height: 35%">
+      <q-item class="col-10 column justify-center items-center lista_config_perf" style="min-height: 25%; max-height: 35%">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Login</q-item-label>
 
@@ -34,7 +34,7 @@
     </div>
 
     <div class="row flex-center">
-      <q-item class="col-10 bg-white column justify-center items-center lista" style="min-height: 25%; max-height: 35%;">
+      <q-item class="col-10 column justify-center items-center lista_config_perf" style="min-height: 25%; max-height: 35%;">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>E-mail</q-item-label>
           <q-item clickable v-ripple>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="row flex-center q-mb-lx">
-      <q-item class="col-10 bg-white column justify-center items-center lista" style="min-height: 25%; max-height: 35%">
+      <q-item class="col-10 column justify-center items-center lista_config_perf" style="min-height: 25%; max-height: 35%">
         <q-list separator class="col-8" style="width: 100%">
 
           <q-item-label header>Senha</q-item-label>
@@ -113,12 +113,13 @@ export default defineComponent({
 .body--dark {
   background: black;
 }
-.body--light .lista {
-  background: white;
-}
-
-.body--dark .lista {
+.body--light .lista_config_perf {
   background: white;
   color: black;
+}
+
+.body--dark .lista_config_perf {
+  background: black;
+  color: white;
 }
 </style>

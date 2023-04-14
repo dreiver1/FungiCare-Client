@@ -4,7 +4,7 @@
       <div class="text-h6">Configuração</div>
     </div>
     <div class="row flex-center q-my-lg">
-      <q-item class="col-10 bg-white column justify-center items-center lista" style="min-height: 25%; max-height: 35%">
+      <q-item class="col-10 column justify-center items-center lista_conf" style="min-height: 25%; max-height: 35%">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Linguagem</q-item-label>
 
@@ -29,13 +29,14 @@
       </q-item>
     </div>
     <div class="row flex-center">
-      <q-item class="col-10 bg-white column justify-center items-center lista" style="min-height: 25%; max-height: 35%;">
+      <q-item class="col-10 column justify-center items-center lista_conf" style="min-height: 25%; max-height: 35%;">
         <q-list separator class="col-8" style="width: 100%">
           <q-item-label header>Configurações adicionais</q-item-label>
 
           <q-item clickable v-ripple>
             <q-item-section >
               <q-item-label>Modo escuro</q-item-label>
+              <DarkMode></DarkMode>
             </q-item-section>
             <q-item-section side>
               <q-icon name="arrow_forward_ios"></q-icon>
@@ -83,20 +84,24 @@
   </q-page>
 </template>
 <script>
+import DarkMode from 'src/components/darkMode.vue'
 import { defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
 const route = useRouter()
 
 export default defineComponent({
-  name: 'configuracoesPage',
-  data () {
-    const goTo = (rota) => {
-      route.push({ name: rota })
+    name: "configuracoesPage",
+    data() {
+        const goTo = (rota) => {
+            route.push({ name: rota });
+        };
+        return {
+            goTo
+        };
+    },
+    components: {
+      DarkMode
     }
-    return {
-      goTo
-    }
-  }
 })
 </script>
 <style>
@@ -108,12 +113,12 @@ export default defineComponent({
   background: black;
 
 }
-.body--light .lista {
+.body--light .lista_conf {
   background: white;
 }
 
-.body--dark .lista {
-  background: white;
-  color: black;
+.body--dark .lista_conf {
+  background: black;
+  color: white;
 }
 </style>

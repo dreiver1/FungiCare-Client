@@ -17,7 +17,7 @@
           <darkMode class="darkmode col-2"/>
         </div>
         <q-item class="q-my-md flex justify-around col-4">
-          <q-btn class="camera" rounded outlined :to="{ name: 'camera' }" size="lg" label="Camera"/>
+          <q-btn class="camera" text-color="white" rounded outlined :to="{ name: 'camera' }" size="lg" label="Camera"/>
             <q-file bg-color="secondary" rounded outlined label-color="white"  label="SELECIONAR" :label-color="white" class="col-5 q-my-lm" :input-style="{ font_size: '36px', fontWeight: 'bold' }" ref="imageCapture"/>
           </q-item>
         </q-item>
@@ -57,7 +57,7 @@ export default defineComponent({
   color: black;
 }
 
-.body--dark .camera{
+.body--dark .lista .camera{
   color: white;
   background: black;
 }

@@ -1,6 +1,12 @@
 <template>
     <q-page class="column justify-between col-12" id="page">
-        <div class="text-h3 col-2 text-center " style="color: white; font-weight: bold;">Fungo detectado</div>
+        <div class="col-2 text-center " style="color: white; font-weight: bold;">
+          <div class="text-h3 col-2 text-center ">
+            Fungo detectado
+          </div>
+          <vue-speech :text="'Olá, mundo!'" />
+          <q-btn color="primary" icon="check" label="OK" @click="speack()" />
+        </div>
         <div class="flex justify-around col-6 self-center" style="width: 80%;">
             <img src="" alt="imagem-do-quasar" id="image" style="object-fit: contain; border: 5px solid white; width: 100%; border-radius: 5%;">
         </div>
@@ -12,26 +18,40 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
+import { speechSynthesis, SpeechSynthesisUtterance } from 'speech-synthesis';
+import VueSpeech from 'vue-speech';
 
 export default defineComponent({
 name: 'IndexPage',
-data () {
-    return {
-    enableCamera: false,
-    cameraStart: false,
-    imageCapture: null,
-    track: null
+  data () {
+      return {
+      enableCamera: false,
+      cameraStart: false,
+      imageCapture: null,
+      track: null
+      }
+  },
+  methods: {
+    speack(){
+      if ('speechSynthesis' in window) {
+      const message = new SpeechSynthesisUtterance();
+      message.text = `
+      "Quando um hospedeiro é infectado, o fungo invade o cérebro e passa a controlar seus movimentos
+       e comportamentos, transformando-os em criaturas violentas conhecidas como 'infectatos'"`;
+      message.lang = 'pt-BR';
+      speechSynthesis.speak(message);
+      }
     }
-},
-mounted () {
-    const image = localStorage.getItem('imageData');
-    const img = document.querySelector("#image");
-    // crie uma nova tag img com a string como fonte de imagem e adicione ao corpo da página
-    img.src = image;
-    },
-    methods: {
-}
+  },
+  onMounted(){
+    this.speack()
+  },
+  mounted () {
+      const image = localStorage.getItem('imageData');
+      const img = document.querySelector("#image");
+      img.src = image;
+    }
 })
 </script>
 <style>

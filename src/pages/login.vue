@@ -54,6 +54,7 @@ export default defineComponent({
 .body--dark .lista{
   background-color: black;
 }
+
 .body--light .lista{
   background-color: green;
 }

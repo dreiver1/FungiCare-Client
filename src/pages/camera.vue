@@ -10,15 +10,6 @@
         <q-item class="self-end" >
             <q-item class="column justify-between col-12">
               <q-btn
-                v-if="!cameraStart"
-                label="Acessar Camera"
-                color="primary"
-                icon="camera"
-                :disable="!enableCamera"
-                @click="useCamera"
-              />
-              <q-btn
-                v-else
                 label="Tirar Foto"
                 color="primary"
                 icon="camera"
@@ -42,7 +33,6 @@ name: 'IndexPage',
 data () {
     return {
     enableCamera: false,
-    cameraStart: false,
     imageCapture: null,
     track: null
     }
@@ -50,6 +40,7 @@ data () {
 mounted () {
     if (navigator.mediaDevices.getUserMedia) {
     this.enableCamera = true
+    this.useCamera();
     }
 },
 methods: {

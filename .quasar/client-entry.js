@@ -40,7 +40,6 @@ import createQuasarApp from './app.js'
 import quasarUserOptions from './quasar-user-options.js'
 
 
-import 'app/src-pwa/register-service-worker'
 
 
 
@@ -48,13 +47,7 @@ import 'app/src-pwa/register-service-worker'
 
 
 
-// Needed only for iOS PWAs
-if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream && window.navigator.standalone) {
-  import('@quasar/fastclick')
-}
-
-
-const publicPath = `/`
+const publicPath = ``
 
 async function start ({
   app,
@@ -86,7 +79,7 @@ async function start ({
     // continue if we didn't fail to resolve the url
     if (href !== null) {
       window.location.href = href
-      
+      window.location.reload()
     }
   }
 
@@ -128,7 +121,10 @@ async function start ({
     
 
     
-      app.mount('#q-app')
+      document.addEventListener('deviceready', () => {
+        app.config.globalProperties.$q.cordova = window.cordova
+        app.mount('#q-app')
+      }, false) // on deviceready
     
 
     

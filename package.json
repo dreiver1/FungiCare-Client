@@ -10,6 +10,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@codekraft-studio/vue-speech": "^0.1.0",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.21.1",
     "quasar": "^2.6.0",

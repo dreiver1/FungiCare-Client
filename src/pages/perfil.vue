@@ -102,15 +102,11 @@ export default defineComponent({
 
 .body--light .lista_perfil {
   background: white;
+  color: black;
 }
 
 .body--dark .lista_perfil {
   background: black;
   color: white;
 }
-
-.body--dark .lista_perfil {
-  color: black;
-}
-
 </style>
